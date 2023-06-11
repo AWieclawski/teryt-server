@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.awieclawski.edu/soapserver"
+	targetNamespace="http://www.awieclawski.edu/soapserver"
+	elementFormDefault="qualified">
+
+
+	<xs:element name="getWojewodztwoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="kodW" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getWojewodztwoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="wojewodztwo" type="tns:wojewodztwo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="wojewodztwo">
+		<xs:sequence>
+			<xs:element name="kodW" type="xs:string" />
+			<xs:element name="nazwa" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:element name="getPowiatRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="kodP" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getPowiatResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="powiat" type="tns:powiat" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="powiat">
+		<xs:sequence>
+			<xs:element name="kodP" type="xs:string" />
+			<xs:element name="nazwa" type="xs:string" />
+			<xs:element name="kodW" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:element name="getGminaRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="kodG" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getGminaResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="gmina" type="tns:gmina" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="gmina">
+		<xs:sequence>
+			<xs:element name="kodG" type="xs:string" />
+			<xs:element name="nazwa" type="xs:string" />
+			<xs:element name="kodP" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+</xs:schema>
